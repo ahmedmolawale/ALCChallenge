@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/user_card_view"
+        card_view:cardElevation="2dp"
+        card_view:contentPadding="5dp"
+        android:layout_marginBottom="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v4.widget.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:id="@+id/user_image"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:text="Ahmed Olawale"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:textStyle="italic|bold"/>
+
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
