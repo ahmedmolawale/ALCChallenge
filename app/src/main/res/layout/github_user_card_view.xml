@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <android.support.v7.widget.CardView
+        android:id="@+id/github_user_card_view"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/user_card_view"
+        android:layout_marginBottom="2dp"
         card_view:cardElevation="2dp"
-        card_view:contentPadding="5dp"
-        android:layout_marginBottom="2dp">
+        card_view:contentPadding="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <android.support.v4.widget.CircleImageView
+            <!--ImageView
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:id="@+id/user_image"
+                android:elevation="5dp"
+                android:src="@mipmap/ic_launcher"/-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_image"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:elevation="5dp"
                 android:src="@mipmap/ic_launcher"/>
 
             <TextView
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/user_name"
-                android:text="Ahmed Olawale"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/name"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
-                android:gravity="center"
                 android:textStyle="italic|bold"/>
 
         </LinearLayout>

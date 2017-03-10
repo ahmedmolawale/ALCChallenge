@@ -2,11 +2,9 @@ package com.alc.alcchallenge.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by ahmed on 05/03/2017.
- */
+import java.io.Serializable;
 
-public class User {
+public class GitHubUser implements Serializable {
 
     //This helps to serialised the JSON item received into a java object
 
@@ -64,10 +62,10 @@ public class User {
     @SerializedName("score")
     private double score;
 
-    public User(String login, int id, String avatar_url, String gravatar_id, String url,
-                String html_url, String followers_url, String following_url, String gists_url, String starred_url,
-                String subscriptions_url, String organizations_url, String repos_url, String events_url,
-                String received_events_url, String type, boolean site_admin, double score) {
+    public GitHubUser(String login, int id, String avatar_url, String gravatar_id, String url,
+                      String html_url, String followers_url, String following_url, String gists_url, String starred_url,
+                      String subscriptions_url, String organizations_url, String repos_url, String events_url,
+                      String received_events_url, String type, boolean site_admin, double score) {
         this.login = login;
         this.id = id;
         this.avatar_url = avatar_url;

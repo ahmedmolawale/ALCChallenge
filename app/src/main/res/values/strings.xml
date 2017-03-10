@@ -6,4 +6,10 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_main__screen">Java Developers</string>
+    <string name="title_activity_git_hub_user_details">Developer Details</string>
+    <string name="name">Username:</string>
+    <string name="profile_photo">Profile Photo:</string>
+    <string name="profile_url">Github Profile URL:</string>
+    <string name="action_share">Share</string>
+    <string name="description">User Image</string>
 </resources>

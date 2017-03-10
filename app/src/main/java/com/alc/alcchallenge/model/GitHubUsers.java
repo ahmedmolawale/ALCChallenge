@@ -4,11 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * Created by ahmed on 05/03/2017.
- */
 
-public class UsersResponse {
+public class GitHubUsers {
 
     //This helps to serialised the JSON Object received into a java object
 
@@ -17,7 +14,7 @@ public class UsersResponse {
     @SerializedName("incomplete_results")
     private boolean incomplete_results;
     @SerializedName("items")
-    private List<User> items;
+    private List<GitHubUser> items;
 
     public int getTotal_count() {
         return total_count;
@@ -35,11 +32,11 @@ public class UsersResponse {
         this.incomplete_results = incomplete_results;
     }
 
-    public List<User> getItems() {
+    public List<GitHubUser> getItems() {
         return items;
     }
 
-    public void setItems(List<User> items) {
+    public void setItems(List<GitHubUser> items) {
         this.items = items;
     }
 }

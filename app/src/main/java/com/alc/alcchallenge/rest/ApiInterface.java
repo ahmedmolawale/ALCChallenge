@@ -1,6 +1,6 @@
 package com.alc.alcchallenge.rest;
 
-import com.alc.alcchallenge.model.UsersResponse;
+import com.alc.alcchallenge.model.GitHubUsers;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,13 +16,13 @@ public interface ApiInterface {
 
 
     /**
-     * @interface ApiInterface
+     *
      *
      * Defines a method signature to simulate the HTTP GET request with @GET annotation
-     * @param type
-     * @param searchTerms
-     * @return
+     * @params type
+     * @params searchTerms
+     *
      */
-    @GET("search/users")
-    Call<UsersResponse> getUsers(@Query("q") String searchTerms, @Query("type") String type);
+    @GET("/search/users")
+    Call<GitHubUsers> getUsers(@Query("q") String searchTerms, @Query("type") String type, @Query("per_page") String itemsPerPage, @Query("access_token") String accessToken);
 }
