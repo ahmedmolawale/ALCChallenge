@@ -63,7 +63,7 @@ public class DeveloperListAdapter extends RecyclerView.Adapter<DeveloperListAdap
         return gitHubUsers.size();
     }
 
-    private static class GitHubUserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class GitHubUserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private CircleImageView gitHubUserImage;
         private TextView gitHubUsername;
