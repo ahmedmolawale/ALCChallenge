@@ -24,5 +24,5 @@ public interface ApiInterface {
      *
      */
     @GET("/search/users")
-    Call<GitHubUsers> getUsers(@Query("q") String searchTerms, @Query("type") String type, @Query("per_page") String itemsPerPage, @Query("access_token") String accessToken);
+    Call<GitHubUsers> getUsers(@Query("q") String searchTerms, @Query("type") String type, @Query("per_page") String itemsPerPage);
 }

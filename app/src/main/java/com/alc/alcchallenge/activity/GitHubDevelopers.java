@@ -1,11 +1,7 @@
 package com.alc.alcchallenge.activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,7 +30,6 @@ public class GitHubDevelopers extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
-    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +45,7 @@ public class GitHubDevelopers extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         makeApiCall();
-        
+
     }
 
     @Override
@@ -72,9 +67,8 @@ public class GitHubDevelopers extends AppCompatActivity {
         final String SEARCH_TERMS = "language:java location:lagos";
         final String TYPE = "user";
         final String ITEMS_PER_PAGE = "100";
-        final String ACCESS_TOKEN = "81964c7d06ca9744cba7321c021bf549316d4678";
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<com.alc.alcchallenge.model.GitHubUsers> call = apiService.getUsers(SEARCH_TERMS, TYPE, ITEMS_PER_PAGE, ACCESS_TOKEN);
+        Call<com.alc.alcchallenge.model.GitHubUsers> call = apiService.getUsers(SEARCH_TERMS, TYPE, ITEMS_PER_PAGE);
 
         //asynchronously call to the api
         call.enqueue(new Callback<com.alc.alcchallenge.model.GitHubUsers>() {
@@ -133,19 +127,10 @@ public class GitHubDevelopers extends AppCompatActivity {
 
                     }
                 });
-
                 builder.show();
-
             }
         });
 
-
-    }
-
-    private boolean isOnline() {
-        ConnectivityManager conn = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = conn.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnected();
     }
 
 }
